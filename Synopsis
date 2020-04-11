@@ -1,0 +1,28 @@
+COLLEGE ENQUIRY CHAT BOT SYSTEM
+
+Chat bots typically provide a text-based user interface, allowing the user to type commands and receive text as well as text to speech response. Chat bots are usually a stateful services, remembering previous commands (and perhaps even conversation) in order to provide functionality. When chat bot technology is integrated with popular web services it can be utilized securely by an even larger audience.
+•	A College Enquiry Chat Bot project is built using artificial algorithms that analyzes user’s queries and understand user’s message. 
+•	This System is a IDLE application which provides answer to the query of the student very effectively. 
+•	Students just have to query through the bot which is used for chatting. 
+•	Students can chat using any format, as there is no specific format that the user has to follow. 
+•	The System uses built in artificial intelligence to answer the query. 
+•	The answers are appropriate what the user queries. 
+•	The user does not have to personally go to the college for enquiry. 
+•	The system analyzes the question and then answers to the user. 
+Features:
+
+	The system comprises of 2 modules as follows:
+1.	Bot Chat
+2.	Text to Speech
+Description:
+
+1.	Bot Chat: 
+-	User can chat with the bot it implies as if enquiring to the college person about college related activities.
+
+2.	Text to Speech: 
+-	The bot also speaks out the answer.
+
+Advantages
+•	User does not have to go personally to college office for the enquiry.
+•	This application enables the students to be updated with college cultural activities.
+•	This application saves time for the student as well as teaching and non teaching staffs.
