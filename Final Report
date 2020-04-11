@@ -1,0 +1,141 @@
+ABSTRACT:
+A chatbot is a computer software able to interact with humans using a natural language. They usually rely on machine learning, especially
+on NLP. Apple’s Siri, Amazon’s Alexa, Google Assistant, and Microsoft’s Cortana are some well-known examples of software able to process
+natural languages. Natural language processing (NLP) is one of the most promising fields of artificial intelligence that uses natural 
+languages to enable human interactions with machines. Chatter Bot is a Python library designed to make it easy to create software that 
+can engage in conversation. An untrained instance of Chatter Bot starts off with no knowledge of how to communicate. Each time a user 
+enters a statement, the library saves the text that they entered and the text that the statement was in response to. As Chatter Bot 
+receives more input the number of responses that it can reply and the accuracy of each response in relation to the input statement 
+increase. The program selects the closest matching response by searching for the closest matching known statement that matches the input,
+it then chooses a response from the selection of known responses to that statement.
+
+
+INTRODUCTION TO PROJECT:
+The College bot project is built using artificial algorithms that analyses user’s queries and understand user’s message. This system is 
+a simple Python 3.7(64 BIT) IDLE based which provides answer to the query of the student. Students just have to query through the bot 
+which is used for chatting. Students can chat using the question provided to it. The System uses built in artificial intelligence to
+answer the query. The answers are appropriate what the user queries. The User can query any college related activities through the system
+. The user does not have to personally go to the college for enquiry. The System analyses the question and then answers to the user. The
+system answers to the query as if it is answered by the person. With the help of artificial intelligence, the system answers the query
+asked by the students. The system replies using an effective as if real person is chatting at back end. This system helps the student to
+be updated about the college activities.
+
+Advantages:
+1.	User does not have to go personally to college office for the enquiry.
+2.	This application saves time for the student as well as teaching and non-teaching staffs.
+
+Disadvantages:
+1.	This system requires Internet Connection.
+2.	If many users enquire at same time, response will be slow.
+
+LITERATURE REVIEW:
+It is a Language Independent Chat Bot, the language independent design of Chatter Bot allows it to be trained to speak any language.
+Additionally, the machine-learning nature of Chatter Bot allows an agent instance to improve its own knowledge of possible responses as
+it interacts with humans and other sources of informative data. As students, we require many types of information regarding our college
+and university during our course. Sometimes getting this information is rather cumbersome and lengthy. Like getting information regarding
+our fees structure or the due fees remaining is a very lengthy process we have to go to administration building and find the correct 
+window and then look for a no dues form then fill it with correct data and then submit it to the appropriate person and then that person
+will tell us our due fees. This is all long, hectic and unnecessary. We live in an age of computer science, where automation and simple 
+procedures are easy to achieve. So why have this long and unnecessary process to get this trivial information. We as a computer science 
+student are always looking forward to solve the problems around us using the technology that we learn and how to implement them to 
+achieve ease of usage in real life. This is where we thought of using an intelligent chat bot delivering these information’s. Think about
+an application, where all you have to do is ask. You want fees status of a student, just ask the chatbot about is it clear or not it will
+tell you. No need to get into lengthy and hectic procedure. You want to know the process of filling the university exam form, no problem
+our bot will tell you the steps. It can also solve the dilemma when a student is about to join the college. He/she may want to enquire
+about fee structure of various colleges and know their admission procedure. Now in the current system it can be a long process. You would
+have to go to various college sites and then check it. Then our chatbot can do it for you in seconds all you will have to do is to ask 
+it. 
+
+PROPOSED METHODOLOGY:
+
+Now at first, we have to install the library Chatter Bot for now. I recommend creating and using a new Python virtual environment for 
+this purpose. Execute the following commands in your Python terminal/Command Prompt:
+
+pip install chatterbot
+pip install –ignore-installed PyYAML
+pip install chatterbot_corpus
+pip install spacy
+You can also try upgrading them:
+pip install --upgrade chatterbot_corpus
+pip install --upgrade chatterbot
+Now we’ll need to import two classes for this purpose: 
+Chat Bot from chatterbot and ListTrainer from chatterbot.trainers:
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+We’re now prepared to create and train our Chatbot.
+*SAMPLE*:
+So, we have to provide responses. We do that by specifying the lists of strings later used to train the bot and find the best match for
+each question. This is what I want our bot to learn:
+conversation=[
+   	 "Hello",
+"Hi Sir I am your BOT Assistant, I Welcome you to Lovely Professional University!",
+    	"Tell me about LPU",
+  "Lovely Professional University is a private university situated in Phagwara, Punjab, India. The university was established in 2005 by Lovely International Trust, under The Lovely Professional University Act, 2005 and started operation in 2006",
+   	 ]
+Next, We can create and train the bot by creating an instance of ListTrainer and supplying it with the lists of strings:
+trainer = ListTrainer(chatbot)
+trainer.train(conversation)
+The bot should now be trained and ready to communicate.
+CODE USED:
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+
+conversation=[
+    "Hello",
+ "Hi Sir I am your BOT Assistant, I Welcome you to Lovely Professional University!",
+    "Tell me about LPU",
+"Lovely Professional University is a private university situated in Phagwara, Punjab, India. The university was established in 2005 by Lovely International Trust, under The Lovely Professional University Act, 2005 and started operation in 2006",
+    "Can I get direct admission in LPU?",
+    "Hey, yes you can get direct admission in LPU without the NEST. NEST (National Entrance & Scholarship Test) is totally based on the scholarship criteria. There is a lot of advantages of appearing for LPU- NEST, including attractive scholarship.",
+    "How can I get Scholarship in LPU?",
+    "1,20,000/- per year from some outer agency , then the maximum entitlement for scholarship offered by LPU for such student shall be Rs. 62,000/- per year, obtained by subtracting Scholarship from Outer agency i.e. 1,20,000/- from total fee of the programme i.e. Rs. 1,82,000/- (1,39,000/- + 43000/- = 1,82,000/- ).",
+    "Tell me about fees structure",
+    "All the annexure is attached on our website please visit http://www.lpu.in",
+    "Thankyou",
+    "Thankyou for visiting LPU",
+    ]
+
+chatbot=ChatBot('LPU_BOT')
+
+trainer = ListTrainer(chatbot)
+trainer.train(conversation)
+
+while True:
+    userInput=input("You:")
+    if userInput.strip()=='Bye' or userInput.strip()=='bye':
+        print('ChatBot: Bye Have a nice day sir')
+        break;
+    else:
+        response=chatbot.get_response(userInput)
+        print('Chatbot:',response)
+
+
+
+
+
+Communicating with a Bot:
+You can communicate with your bot using its chatbot .get_response(). Here’s an example of how that might look like:
+ 
+N.B: Its knowledge is limited to the stuff similar to what it has learned.
+
+
+RESULT AND DISCUSSION:
+
+It is often impossible to get all the data on a single interface without the complications of going through multiple forms and windows.
+The college chat bot aims to remove this difficulty by providing a common and user-friendly interface to solve queries of college student
+s and teachers. The purpose of a chat bot system is to simulate a human conversation. Its architecture integrates a language model and 
+computational algorithm to emulate information online communication between a human and a computer using natural language. The college 
+student and employees can freely upload their queries. The chat bot provides fast and efficient search for answers to the queries and 
+gets the relevant links to their question. A background research took place, which included an overview of the conversation procedure 
+and tries to find out the relevant keywords related to that query to provide the proper link. The database storage includes information
+about questions, answers, keywords, and logs. We have also developed an interface.
+
+
+CONCLUSION:
+
+The Main Objective of the project is to develop and algorithm that will be used to identify answers related to users submitted questions.
+The need is to train the chatbot where all the related data will be stored. The algorithm developed will one part for simple user. A 
+background research took place, which included an overview of the conversation procedure and the relevant chat bot available. A database
+will be developed, which will store information about queries and correctly fulfil its purpose within a short time period. Our result 
+show that the total time required to perform all the task, including visit to the college, standing in queue, and enquiry are reduced 
+with the help of our system.
