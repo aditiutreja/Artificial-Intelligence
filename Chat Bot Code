@@ -1,0 +1,31 @@
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+
+conversation=[
+    "Hello",
+    "Hi Sir I am your BOT Assistant, I Welcome you to Lovely Professional University!",
+    "Tell me about LPU",
+    "Lovely Professional University is a private university situated in Phagwara, Punjab, India. The university was established in 2005 by Lovely International Trust, under The Lovely Professional University Act, 2005 and started operation in 2006",
+    "Can I get direct admission in LPU?",
+    "Hey, yes you can get direct admission in LPU without the NEST. NEST (National Entrance & Scholarship Test) is totally based on the scholarship criteria. There is a lot of advantages of appearing for LPU- NEST, including attractive scholarship.",
+    "How can I get Scholarship in LPU?",
+    "1,20,000/- per year from some outer agency , then the maximum entitlement for scholarship offered by LPU for such student shall be Rs. 62,000/- per year, obtained by subtracting Scholarship from Outer agency i.e. 1,20,000/- from total fee of the programme i.e. Rs. 1,82,000/- (1,39,000/- + 43000/- = 1,82,000/- ).",
+    "Tell me about fees structure",
+    "All the annexure is attached on our website please visit http://www.lpu.in",
+    "Thankyou",
+    "Thankyou for visiting LPU",
+    ]
+
+chatbot=ChatBot('LPU_BOT')
+
+trainer = ListTrainer(chatbot)
+trainer.train(conversation)
+
+while True:
+    userInput=input("You:")
+    if userInput.strip()=='Bye' or userInput.strip()=='bye':
+        print('ChatBot: Bye Have a nice day sir')
+        break;
+    else:
+        response=chatbot.get_response(userInput)
+        print('Chatbot:',response)
